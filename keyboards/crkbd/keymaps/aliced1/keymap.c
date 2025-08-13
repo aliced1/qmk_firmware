@@ -65,11 +65,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Num/Navigation Layer
     [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                              ,-----------------------------------------------------.
-      KC_TRNS, KC_NO,   LCS(KC_TAB), LCTL(KC_TAB), LGUI(KC_LEFT), LGUI(KC_RGHT),          KC_NO,   KC_P7,   KC_P8,   KC_P9,   KC_PMNS,  KC_TRNS,
+      KC_TRNS, KC_NO,   LCS(KC_TAB), LCTL(KC_TAB), LGUI(KC_LEFT), LGUI(KC_RGHT),          KC_NO,   KC_7,    KC_8,    KC_9,    KC_PMNS,  KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
-      KC_TRNS, KC_NO,   KC_HOME,     KC_PGUP,      KC_UP,       KC_PGDN,                  KC_DOT,  KC_P4,   KC_P5,   KC_P6,   KC_PPLS,  KC_TRNS,
+      KC_TRNS, KC_NO,   KC_HOME,     KC_PGUP,      KC_UP,       KC_PGDN,                  KC_DOT,  KC_4,    KC_5,    KC_6,    KC_PPLS,  KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
-      KC_TRNS, KC_NO,   KC_END,     KC_LEFT,      KC_DOWN,       KC_RIGHT,                KC_NO,   KC_P1,   KC_P2,   KC_P3,   KC_EQL,   KC_TRNS,
+      KC_TRNS, KC_NO,   KC_END,     KC_LEFT,      KC_DOWN,       KC_RIGHT,                KC_0,    KC_1,    KC_2,    KC_3,    KC_EQL,   KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
                                           KC_TRNS,KC_TRNS,KC_TRNS,      LT(3,KC_TRNS),KC_TRNS,KC_TRNS
                                       //`--------------------------'  `--------------------------'

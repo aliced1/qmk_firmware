@@ -3,3 +3,4 @@
 # RGB_MATRIX_ENABLE = yes
 # EXTRAFLAGS += -flto
 COMBO_ENABLE=yes
+WPM_ENABLE=yes
