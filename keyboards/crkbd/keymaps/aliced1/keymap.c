@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Num/Navigation Layer
     [1] = LAYOUT_split_3x6_3(
   //,---------------------------------------------------------------------------           ,-----------------------------------------------------.
-      KC_TRNS, KC_HOME, LCS(KC_TAB), KC_UP ,       LCTL(KC_TAB),  KC_PGUP                 KC_NO,   KC_7,    KC_8,    KC_9,    KC_PMNS,  KC_TRNS,
+      KC_TRNS, KC_HOME, LCS(KC_TAB), KC_UP ,       LCTL(KC_TAB),  KC_PGUP,                KC_NO,   KC_7,    KC_8,    KC_9,    KC_PMNS,  KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
       KC_TRNS, KC_END,  KC_LEFT,     KC_DOWN,      KC_RIGHT,      KC_PGDN,                KC_DOT,  KC_4,    KC_5,    KC_6,    KC_PPLS,  KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
