@@ -22,12 +22,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 char wpm_str[10];
-enum layers {
-    _BASE,
-    _LOWER,
-    _RAISE,
-    _FN,
-};
+// enum layers {
+//     _BASE,
+//     _LOWER,
+//     _RAISE,
+//     _FN,
+// };
 
 #ifdef SWAP_HANDS_ENABLE
 __attribute__((weak)) const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
@@ -93,17 +93,17 @@ void render_gamingraise(void) {
 }
 static void render_status(void) {
     switch (get_highest_layer(layer_state)) {
-        case _BASE:
+        case 0:
 			render_nothing();
             break;
-        case _LOWER:
+        case 1:
 			render_gaming();
             break;
-        case _RAISE:
+        case 2:
 			render_gamingraise();
             break;
-        case _FN:
-            render_gaming();
+        case 3:
+            render_nothing();
             break;
         default:
             oled_write_P(PSTR("Undefined"), false);

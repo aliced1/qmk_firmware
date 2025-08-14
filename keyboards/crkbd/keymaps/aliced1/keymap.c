@@ -16,6 +16,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+
+// Compile using 
+// qmk compile -e CONVERT_TO=BLOK -kb crkbd/r2g -km aliced1
+
 #include QMK_KEYBOARD_H
 
 enum combos { 
@@ -53,11 +57,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      OS_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_APP,
+      OS_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      OS_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_WBAK,
+      OS_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LGUI,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                             OS_LALT, LGUI_T(KC_ENT), LT(1,KC_TAB),      LT(2,KC_SPC),KC_BSPC,KC_RALT
+                             OS_LALT, KC_ENT, LT(1,KC_TAB),                 LT(2,KC_SPC),KC_BSPC,KC_RALT
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -69,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
       KC_TRNS, KC_END,  KC_LEFT,     KC_DOWN,      KC_RIGHT,      KC_PGDN,                KC_DOT,  KC_4,    KC_5,    KC_6,    KC_PPLS,  KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
-      KC_TRNS, KC_NO,   KC_NO,       KC_NO,        KC_NO,         KC_NO,                  KC_0,    KC_1,    KC_2,    KC_3,    KC_EQL,   KC_TRNS,
+      KC_TRNS, KC_NO,   KC_NO,       LALT(KC_TAB),  LSA(KC_TAB),  KC_NO,                  KC_0,    KC_1,    KC_2,    KC_3,    KC_EQL,   KC_TRNS,
   //|--------+--------+-------------+-------------+--------------+--------------|        |--------+--------+--------+--------+--------+--------|
                                           KC_TRNS,KC_TRNS,KC_TRNS,      LT(3,KC_TRNS),KC_TRNS,KC_TRNS
                                       //`--------------------------'  `--------------------------'
@@ -78,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Symbol Layer
     [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_TRNS, KC_NO,  KC_CIRC, KC_EQL,  KC_GRAVE, KC_NO,                       KC_TILD, KC_EXLM, KC_SLSH, KC_CIRC, KC_NO,   KC_TRNS,
+      KC_TRNS, KC_NO,  KC_CIRC, KC_EQL,  KC_GRAVE, KC_NO,                       KC_TILD, KC_EXLM, KC_BSLS, KC_CIRC, KC_NO,   KC_TRNS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TRNS, KC_NO,  KC_AT,   KC_ASTR, KC_MINS,  KC_HASH,                     KC_DLR,  KC_QUOT, KC_PIPE, KC_PERC,  KC_NO,   KC_TRNS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -93,9 +97,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, KC_F6,                          KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TRNS, KC_NO,   KC_MRWD, KC_MFFD, KC_MPLY, KC_VOLU,                      KC_BRIU,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
+      KC_TRNS, KC_NO,   KC_MRWD, KC_MFFD, KC_MPLY, KC_VOLU,                      KC_BRIU, LCS(KC_V),DM_REC1, DM_REC2, DM_RSTP, KC_TRNS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_MSTP, KC_VOLD,                      KC_BRID,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
+      KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_MSTP, KC_VOLD,                      KC_BRID, LSG(KC_S),DM_PLY1, DM_PLY2, KC_NO, KC_TRNS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_TRNS,KC_TRNS,KC_TRNS,      KC_TRNS,KC_TRNS,KC_TRNS
                                       //`--------------------------'  `--------------------------'
